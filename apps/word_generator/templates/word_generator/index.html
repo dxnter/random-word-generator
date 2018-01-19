@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% load static %}
+    <link rel="stylesheet" href="{% static 'word_generator/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <title>Random Word Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col"></div>
+            <div class="col-4">
+                <h3>Random Word (attempt #{{request.session.counter}})</h3>
+                <input class="form-control text-center" type="text" placeholder="{{random_word|upper}}" readonly>
+                <form action="/generate" method="POST" action>
+                    {% csrf_token %}
+                    <button class="btn btn-primary btn-lg">Generate</button>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
