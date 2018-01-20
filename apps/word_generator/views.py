@@ -9,7 +9,7 @@ def index(request):
 def generate(request):
     request.session['random_word'] = get_random_string(length=13)
     request.session['counter'] += 1
-    return render(request, 'word_generator/index.html', {'random_word': request.session['random_word'], 'counter': request.session['counter']})
+    return render(request, 'word_generator/index.html')
 
 def reset(request):
     del request.session['counter']
