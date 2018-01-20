@@ -17,7 +17,7 @@
             <div class="col"></div>
             <div class="col-4">
                 <h3>Random Word (attempt #{{request.session.counter}})</h3>
-                <input class="form-control text-center" type="text" placeholder="{{request.session.random_word|upper}}" readonly>
+                <input class="form-control text-center" type="text" value="{{request.session.random_word|upper}}">
                 <form action="/generate" method="POST" action>
                     {% csrf_token %}
                     <button class="btn btn-primary btn-lg">Generate</button>
